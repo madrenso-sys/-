@@ -1,12 +1,11 @@
-// 파일 이름 형식: 'random (1).png' 형식
-// 폴더 이름: 'new images'
+// 설정: 폴더 이름: 'new images', 파일 이름 형식: 'random (1).png'
 const imageList = [];
 for (let i = 1; i <= 49; i++) {
     // 폴더 이름과 파일 이름 형식을 모두 적용하여 경로 생성
     imageList.push(`new images/random (${i}).png`);
 }
 
-// 기본 이미지 경로 설정
+// 기본 이미지 경로 설정 (초기화에 사용)
 const defaultImagePath = 'new images/default.png'; 
 
 // Roll 버튼 클릭 이벤트 리스너
@@ -15,20 +14,21 @@ document.querySelectorAll('.roll-button').forEach(button => {
         const itemIndex = this.getAttribute('data-index'); 
         const targetImage = document.getElementById(`image-${itemIndex}`);
 
+        // 랜덤 인덱스 선택
         const randomIndex = Math.floor(Math.random() * imageList.length);
         const randomImagePath = imageList[randomIndex];
 
+        // 이미지 소스 변경
         targetImage.src = randomImagePath;
     });
 });
 
-// === 초기화 버튼 기능 추가 ===
+// 초기화 버튼 기능 추가
 document.getElementById('reset-button').addEventListener('click', function() {
-    // 1번, 2번, 3번 이미지 칸을 모두 defaultImagePath로 되돌립니다.
+    // 1번, 2번, 3번 이미지 칸을 모두 기본 이미지로 되돌립니다.
     document.getElementById('image-1').src = defaultImagePath;
     document.getElementById('image-2').src = defaultImagePath;
     document.getElementById('image-3').src = defaultImagePath;
     
-    // (선택 사항: 초기화 시 버튼 스타일 등을 변경할 수 있습니다.)
     console.log("모든 이미지가 초기화되었습니다.");
 });
