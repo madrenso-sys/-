@@ -1,12 +1,13 @@
 // 랜덤으로 나올 이미지 파일 이름 목록 (49개)
-// 파일 이름이 'random (1).png' 부터 'random (49).png'까지 이어져야 합니다.
+// 파일 이름: 'random (1).png' 형식
+// 폴더 이름: 'new images'
 const imageList = [];
 for (let i = 1; i <= 49; i++) {
-    // 공백과 괄호를 포함하여 경로를 생성합니다. (요청하신 정확한 형식)
-    imageList.push(`images/random (${i}).png`);
+    // 폴더 이름과 파일 이름 형식을 모두 적용하여 경로 생성
+    imageList.push(`new images/random (${i}).png`);
 }
 
-// 모든 Roll 버튼에 클릭 이벤트 리스너 추가 (나머지 로직은 동일합니다.)
+// 모든 Roll 버튼에 클릭 이벤트 리스너 추가
 document.querySelectorAll('.roll-button').forEach(button => {
     button.addEventListener('click', function() {
         const itemIndex = this.getAttribute('data-index'); 
