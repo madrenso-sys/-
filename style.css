@@ -38,9 +38,8 @@ body {
     object-fit: contain; /* 이미지가 잘리지 않도록 contain으로 변경 */
 }
 
-/* Roll 버튼 스타일 */
 .roll-button {
-    background-color: #a74848; 
+    background-color: #a74848;
     color: white;
     border: none;
     padding: 10px 30px;
@@ -53,31 +52,5 @@ body {
 }
 
 .roll-button:hover {
-    background-color: #8c3e3e;
-}
-
-/* 초기화 버튼 영역 스타일 */
-.control-panel {
-    margin-top: 40px; 
-    display: flex;
-    justify-content: center;
-}
-
-/* 초기화 버튼 스타일 */
-.control-button {
-    background-color: #a74848; 
-    color: white;
-    border: none;
-    padding: 10px 30px;
-    font-size: 1.1em;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    text-transform: uppercase;
-    margin: 0 10px;
-}
-
-.control-button:hover {
     background-color: #8c3e3e;
 }
